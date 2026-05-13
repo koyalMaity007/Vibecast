@@ -1,5 +1,3 @@
-alert("JS LOADED");
-
 const cityInput = document.getElementById("cityInput");
 const searchBtn = document.getElementById("searchBtn");
 
@@ -23,7 +21,6 @@ cityInput.addEventListener("keypress", (e) => {
 });
 
 async function getWeather() {
-
   const city = cityInput.value.trim();
 
   if (!city) {
@@ -34,9 +31,8 @@ async function getWeather() {
   showLoader();
 
   try {
-
     const response = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
+      `http://localhost:3000/weather?city=${city}`
     );
 
     if (!response.ok) {
@@ -46,45 +42,28 @@ async function getWeather() {
     const data = await response.json();
 
     displayWeather(data);
-
   } catch (error) {
-
     showError(error.message);
-
   } finally {
-
     hideLoader();
-
   }
 }
 
 function displayWeather(data) {
-
   weatherCard.classList.remove("hidden");
   errorMessage.classList.add("hidden");
 
   cityName.textContent = `${data.name}, ${data.sys.country}`;
-
-  temperature.textContent =
-    `🌡 Temperature: ${data.main.temp}°C`;
-
-  description.textContent =
-    `☁ Condition: ${data.weather[0].description}`;
-
-  humidity.textContent =
-    `💧 Humidity: ${data.main.humidity}%`;
-
-  wind.textContent =
-    `🌬 Wind Speed: ${data.wind.speed} m/s`;
+  temperature.textContent = `🌡 Temperature: ${data.main.temp}°C`;
+  description.textContent = `☁ Condition: ${data.weather[0].description}`;
+  humidity.textContent = `💧 Humidity: ${data.main.humidity}%`;
+  wind.textContent = `🌬 Wind Speed: ${data.wind.speed} m/s`;
 }
 
 function showError(message) {
-
   weatherCard.classList.add("hidden");
-
-  errorMessage.textContent = message;
-
   errorMessage.classList.remove("hidden");
+  errorMessage.textContent = message;
 }
 
 function showLoader() {

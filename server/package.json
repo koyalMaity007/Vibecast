@@ -1,0 +1,27 @@
+{
+  "name": "weatherapp",
+  "version": "1.0.0",
+  "description": "Vibecast is a modern weather app built to deliver clear, real-time weather updates with a smooth and intuitive experience. It focuses on simplicity, speed, and visually clean information so users can quickly understand the day ahead.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/koyalMaity007/Vibecast.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/koyalMaity007/Vibecast/issues"
+  },
+  "homepage": "https://github.com/koyalMaity007/Vibecast#readme",
+  "dependencies": {
+    "axios": "^1.16.1",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1"
+  }
+}
