@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Vibecast</title>
+
+  <link rel="stylesheet" href="weather.css">
+</head>
+<body>
+
+  <main class="app">
+
+    <h1 class="title">Weather Pro</h1>
+
+    <div class="search-container">
+      <input
+        type="text"
+        id="cityInput"
+        placeholder="Search city..."
+        autocomplete="off"
+      />
+
+      <button id="searchBtn">
+        Search
+      </button>
+    </div>
+
+    <div id="loader" class="loader hidden"></div>
+
+    <section id="weatherCard" class="weather-card hidden">
+
+      <h2 id="cityName"></h2>
+
+      <div class="weather-info">
+        <p id="temperature"></p>
+        <p id="description"></p>
+        <p id="humidity"></p>
+        <p id="wind"></p>
+      </div>
+
+    </section>
+
+    <p id="errorMessage" class="error hidden"></p>
+
+  </main>
+
+  <script src="app.js"></script>
+
+</body>
+</html>
