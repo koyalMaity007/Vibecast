@@ -1,7 +1,5 @@
-const API_KEY = "24a83f3cde11be24e5109d7b30873daf";
+alert("JS LOADED");
 
-
-console.log(API_KEY);
 const cityInput = document.getElementById("cityInput");
 const searchBtn = document.getElementById("searchBtn");
 
